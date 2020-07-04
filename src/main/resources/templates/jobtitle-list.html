@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>JobTitle</title>
+</head>
+<body>
+<div th:switch="${jobtitle}">
+    <h2 th:case="null">No title found!</h2>
+    <div th:case="*">
+        <h2>JobTitle</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Job title</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="jobtitle : ${jobtitle}">
+                <td th:text="${jobtitle.id}"></td>
+                <td th:text="${jobtitle.jobPosition}"></td>
+                <td><a th:href="@{jobtitle-update/{id}(id=${jobtitle.id})}">UpDate</a></td>
+                <td><a th:href="@{jobtitle-remove/{id}(id=${jobtitle.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/jobtitle-create">Create joblist</a></p>
+</div>
+</body>
+</html>

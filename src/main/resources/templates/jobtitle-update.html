@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>UpDate Job Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/jobtitle-update}" th:object="${jobtitle}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="jobtitle">Job Title</label>
+    <input type="text" th:field="*{jobPosition}" id="jobtitle" placeholder="Job Title">
+    <br/>
+    <input type="submit" value="Update Job Title">
+</form>
+</body>
+</html>

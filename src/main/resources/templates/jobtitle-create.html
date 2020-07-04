@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Job Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/jobtitle-create}" th:object="${jobTitle}" method="post">
+    <label >Job Title</label>
+    <input type="text" th:field="*{jobPosition}" id="jobPosition" placeholder="Job Title">
+    <input type="submit" value="Create JobTitle">
+</form>
+</body>
+</html>
